@@ -1,11 +1,11 @@
 """
 1、学习目标
-    掌握class_name元素定位方法
+    掌握tag_name元素定位方法
 2、操作步骤（语法）
     #单数：优先查找第一个元素
-    driver.find_element_by_class_name("class的属性值")
+    driver.find_element_by_tag_name("tag标签名")
     #复数：查出元素列表
-    driver.find_elements_by_class_name("class的属性值")
+    driver.find_elements_by_tag_name("tag标签名")
 """
 
 from selenium import webdriver
@@ -18,12 +18,14 @@ driver.get(url)
 
 time.sleep(2)
 
-class_elements = driver.find_elements_by_class_name("van-field__control")
-print(class_elements)
-for i in class_elements:
+tag_elements = driver.find_elements_by_tag_name("input")
+print(tag_elements)
+for i in tag_elements:
     print(i.get_attribute("outerHTML"))
 
-class_elements[2].send_keys("123")
+
+
+tag_elements[1].send_keys("001")
 
 time.sleep(3)
 
