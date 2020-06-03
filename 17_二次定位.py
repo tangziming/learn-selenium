@@ -31,7 +31,11 @@ username = driver.find_element_by_id("field_｛login｝_02").send_keys("001")
 password = driver.find_element_by_id("field_｛login｝_03").send_keys("123")
 button = driver.find_element_by_id("button_｛login｝_01").click()
 
+time.sleep(3)
+block = driver.find_element_by_css_selector("div.one-block")
+UE = block.find_element_by_css_selector("div.grid.one-grid")
 
+print(UE.get_attribute("outerHTML"))
 
 
 time.sleep(5)
